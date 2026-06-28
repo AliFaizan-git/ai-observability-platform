@@ -1,0 +1,63 @@
+# ==========================================
+# Environments & System Secrets (CRITICAL)
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.pem
+*.key
+
+# ==========================================
+# Dependency Folders
+# ==========================================
+node_modules/
+jspm_packages/
+web_modules/
+
+# ==========================================
+# Backend & Database Outputs
+# ==========================================
+server/node_modules/
+sdk/node_modules/
+client/node_modules/
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ==========================================
+# Frontend Build Artifacts (React)
+# ==========================================
+client/dist/
+client/build/
+out/
+.next/
+
+# ==========================================
+# Local Development Databases & Cache
+# ==========================================
+.pnp
+.pnp.js
+.turbo/
+.cache/
+.eslintcache
+db-data/
+redis-data/
+
+# ==========================================
+# IDE / Operating System Junk
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

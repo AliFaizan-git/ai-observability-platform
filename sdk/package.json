@@ -1,0 +1,20 @@
+{
+ "name": "ali-ai-agent-tracer",
+  "version": "1.0.0",
+  "description": "Lightweight non-blocking telemetry SDK for instrumenting LLM agents",
+  "type": "module",
+  "main": "src/index.js",
+  "keywords": [
+    "llm",
+    "observability",
+    "tracing",
+    "ai",
+    "gemini",
+    "openai"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.17.0",
+    "uuid": "^14.0.0"
+  }
+}
