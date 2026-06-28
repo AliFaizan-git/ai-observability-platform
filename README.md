@@ -3,7 +3,6 @@
 > Production-grade LLM tracing, evaluation, and A/B testing. 
 > A self-hosted alternative to LangSmith and Helicone.
 
-🌐 **Live Demo:** [your-deployed-url.com]  
 📦 **npm SDK:** `npm install neuralops-sdk`
 
 ## What it does
@@ -27,5 +26,3 @@
 ## Running locally
 ...
 
-## Screenshots
-[include 3-4 screenshots of the dashboard]
