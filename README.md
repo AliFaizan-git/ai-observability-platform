@@ -6,7 +6,20 @@
 📦 **npm SDK:** `npm install neuralops-sdk`
 
 ## What it does
-...
+### Data Flow (one complete trace lifecycle)
+
+```
+1. Developer's agent makes an LLM call
+2. SDK intercepts it, sends trace payload to POST /api/traces
+3. Express validates API key, pushes job to Bull trace-queue
+4. Trace Worker picks up job → saves trace to MongoDB
+5. Trace Worker pushes eval job to eval-queue
+6. Eval Worker runs LLM-as-judge → saves eval score to MongoDB
+7. Alert Engine checks rolling avg → fires Slack webhook if degraded
+8. Dashboard queries GET /api/traces → React renders the timeline
+```
+
+---
 
 ## 2. Full System Architecture
 
@@ -80,21 +93,6 @@
 │  • Nodemailer (email alerts)          │
 └───────────────────────────────────────┘
 ```
-
-### Data Flow (one complete trace lifecycle)
-
-```
-1. Developer's agent makes an LLM call
-2. SDK intercepts it, sends trace payload to POST /api/traces
-3. Express validates API key, pushes job to Bull trace-queue
-4. Trace Worker picks up job → saves trace to MongoDB
-5. Trace Worker pushes eval job to eval-queue
-6. Eval Worker runs LLM-as-judge → saves eval score to MongoDB
-7. Alert Engine checks rolling avg → fires Slack webhook if degraded
-8. Dashboard queries GET /api/traces → React renders the timeline
-```
-
----
 
 ## Tech Stack
 - Backend: Node.js, Express.js, MongoDB, Redis, Bull.js
